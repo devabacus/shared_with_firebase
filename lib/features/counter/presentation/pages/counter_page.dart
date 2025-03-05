@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_with_firebase/features/counter/domain/providers/counter.dart';
+import 'package:shared_with_firebase/features/counter/presentation/providers/counter_style.dart';
 
 class CounterPage extends ConsumerWidget {
   const CounterPage({super.key});
@@ -8,6 +9,7 @@ class CounterPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final counter = ref.watch(counterProvider);
+    final counterStyle = ref.watch(counterStyleProvider);
 
 
     return Scaffold(
@@ -16,8 +18,8 @@ class CounterPage extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             switch (counter) {
-              AsyncData(:final value) => Text("value = $value", style: TextStyle(fontSize: 20)),
-              AsyncError(:final error) => Text("error $error", style: TextStyle(fontSize: 20)),
+              AsyncData(:final value) => Text("value = $value", style: counterStyle),
+              AsyncError(:final error) => Text("error $error", style: counterStyle),
               _ => CircularProgressIndicator()
             },
             
