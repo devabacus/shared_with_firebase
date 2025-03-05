@@ -6,7 +6,7 @@ part of 'counter_style.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$counterStyleHash() => r'3703847b5d3eb3a0c1448fd39e84fed8999534d2';
+String _$counterStyleHash() => r'4829a978af8545294d7a8e0452e34b6101db703c';
 
 /// See also [counterStyle].
 @ProviderFor(counterStyle)

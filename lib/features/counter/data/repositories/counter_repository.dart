@@ -23,6 +23,8 @@ class CounterRepository {
 
   Future<void> saveCounter(int value) async {
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt(stringCounterKey, value);
+    final model = CounterModel(value: value, lastUpdated: DateTime.now());
+
+    await prefs.setString(stringCounterKey, jsonEncode(model.toJson()));
   }
 }

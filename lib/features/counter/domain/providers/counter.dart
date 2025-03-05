@@ -16,13 +16,20 @@ class Counter extends _$Counter {
     final counterRepository = ref.read(counterRepositoryProvider);
     final currentState = await future;
 
-    await counterRepository.saveCounter(currentState + 1);
-    state = AsyncData(currentState + 1);
+    final newModel = currentState.copyWith(
+      value: currentState.value + 1,
+      lastUpdated: DateTime.now(),
+    );
+
+    await counterRepository.saveCounter(newModel.value);
+    state = AsyncData(newModel);
   }
 
   Future<void> reset() async {
     final counterRepository = ref.read(counterRepositoryProvider);
-    counterRepository.saveCounter(0);
-    state = AsyncData(0);
+    final newModel = CounterModel.initial();
+
+    await counterRepository.saveCounter(newModel.value);
+    state = AsyncData(newModel);
   }
 }

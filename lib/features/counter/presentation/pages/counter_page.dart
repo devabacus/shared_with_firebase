@@ -18,7 +18,7 @@ class CounterPage extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             switch (counter) {
-              AsyncData(:final value) => Text("value = $value", style: counterStyle),
+              AsyncData(:final value) => Text("value = ${value.value}", style: counterStyle),
               AsyncError(:final error) => Text("error $error", style: counterStyle),
               _ => CircularProgressIndicator()
             },
