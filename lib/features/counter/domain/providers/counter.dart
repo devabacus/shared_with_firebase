@@ -1,12 +1,13 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_with_firebase/features/counter/data/providers/repository_providers.dart';
+import 'package:shared_with_firebase/features/counter/domain/models/counter_model.dart';
 
 part 'counter.g.dart';
 
 @riverpod
 class Counter extends _$Counter {
   @override
-  FutureOr<int> build() {
+  FutureOr<CounterModel> build() {
     final counterRepository = ref.watch(counterRepositoryProvider);
     return counterRepository.getCounter();
   }
