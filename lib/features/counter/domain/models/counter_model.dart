@@ -7,9 +7,6 @@ class CounterModel {
   factory CounterModel.initial() =>
       CounterModel(value: 0, lastUpdated: DateTime.now());
 
-
-
-
   factory CounterModel.fromJson(Map<String, dynamic> json) => CounterModel(
     value: (json['value'] as num).toInt(),
     lastUpdated: DateTime.parse(json['lastUpdated'] as String),

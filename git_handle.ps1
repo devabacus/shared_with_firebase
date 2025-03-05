@@ -57,3 +57,5 @@ git push origin имя_тега                             # gittgpush - Отп
 git push --tags                                      # gittgspush - Отправить все теги в удаленный репозиторий
 git rebase ветка                                     # gitrebase - Перебазировать текущую ветку на указанную
 git cherry-pick коммит_id                            # gitcp - Применить изменения из указанного коммита
+
+git push --force
