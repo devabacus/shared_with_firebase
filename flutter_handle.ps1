@@ -6,7 +6,7 @@ flutter pub get
 
 flutter pub add http
 
-flutter pub add flutter_riverpod
+flutter pub add flutter_riverpod 
 flutter pub add riverpod_annotation
 flutter pub add dev:riverpod_generator
 flutter pub add dev:build_runner
@@ -34,3 +34,5 @@ flutter pub add json_annotation
 flutter pub add freezed --dev
 flutter pub add json_serializable --dev
 flutter pub add build_runner --dev
+
+flutter pub add shared_preferences
